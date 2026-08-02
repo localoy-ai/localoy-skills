@@ -1,68 +1,76 @@
-# SEO playbook — the hard calls
+# SEO playbook
 
-Read this when the request is open-ended, when work spans several skills, or when
-findings disagree about what matters. A single narrow ask does not need it.
+Judgment for the calls the charter's table cannot make. Read this when the request
+is open-ended, spans more than one skill, or when the findings disagree about what
+matters most. Skip it for a single narrow ask.
 
-## Prioritising findings
+## Sequencing an open-ended request
 
-Rank by what it costs to ignore, not by how easy it is to fix. The order that
-holds almost always:
+"Sort out our SEO" is three skills in an order, and the order is not negotiable:
 
-1. **Pages that cannot be indexed at all.** A `noindex` on a money page, a robots
-   rule blocking a section, a 404 in the sitemap. Nothing else matters while a page
-   is invisible.
-2. **Pages indexed under the wrong identity.** Missing or duplicate titles, a
-   canonical pointing somewhere else, two URLs serving the same content. The page
-   is visible but competing with itself.
-3. **Pages that are fine but unfound.** Orphans, anything more than two clicks from
-   the homepage, sections with no internal links in.
-4. **Everything else.** Heading structure, markup, image attributes. Real, worth
-   doing, never the reason traffic fell.
+1. **`seo-audit` first.** Everything downstream is better informed by it, and it
+   is the only skill that tells you what the site actually is. Recommending
+   keywords for a site you have not looked at is guessing with extra steps.
+2. **`keyword-research` second**, if the audit shows the site's pages do not have
+   a clear target — duplicate titles across pages, generic homepage copy, service
+   pages that do not name what they serve.
+3. **`on-page-optimizer` last**, on the two or three pages that matter most, using
+   the terms the research settled on.
 
-If a fix is one line and sits in bucket 4, still put it in bucket 4. Effort is a
-tiebreaker inside a bucket, never a promotion between them.
+Do not run all three by reflex. If the audit turns up broken links, a stray
+noindex, or missing titles, that *is* the answer for this week. Report it and
+stop. Keyword strategy for a site with a noindex on its services page is advice
+nobody can act on yet.
 
-## Reading a ranking change
+## When the request is about rankings
 
-Before explaining a drop, establish it happened. `serp-rank-tracker` first, always.
+You cannot see rankings. There is no rank data in this stack, and there is no
+honest way to infer a position from a page fetch.
 
-Then work down, and stop at the first that explains the size of the move:
+Say that in the first line, then offer what you can actually establish: whether
+the page is indexable, whether it targets the term at all, whether it is the only
+page on the site trying to. Those are real answers to "why am I not ranking" and
+they are frequently the whole cause.
 
-- **Did the page change?** Compare against what you last recorded. A rewrite,
-  a template change, a lost internal link.
-- **Did the site change?** A migration, a redirect chain, a new robots rule.
-- **Did the SERP change?** New competitors, a new feature block, the intent shifting
-  under the query. `competitor-seo` answers this.
-- **Did nothing change?** Then say so. "I could not find a cause" is a real finding
-  and better than the plausible story that sends them rewriting a page for nothing.
+What you must never do is assemble a plausible narrative — "your domain authority
+is low, competition is high" — out of things you did not measure. It sounds like
+an answer, it cannot be checked, and it displaces the real one.
 
-Never attribute a move to an algorithm update you have not verified. It is the
-easiest unfalsifiable answer in this field and it teaches them nothing.
+## Prioritising findings that disagree
 
-## Sequencing multi-skill work
+When the audit surfaces more than a handful of problems, rank them by this order,
+not by how many pages each affects:
 
-For "sort out our SEO" with no further steer:
+1. **Things that prevent the page being found at all.** A noindex, a broken
+   canonical, a 404 in the main navigation, a page missing from the sitemap that
+   should be in it. Nothing else matters while one of these is live.
+2. **Things on the pages that make money.** A weak title on the services page
+   outranks a perfect one on a 2019 blog post, whatever the page count says.
+3. **Things that are cheap and unambiguous.** A missing meta on one page takes a
+   minute and cannot make anything worse.
+4. **Everything else.** Markup niceties, image attributes, heading levels on
+   pages nobody lands on.
 
-1. `seo-audit` — learn the actual state. Everything downstream depends on it.
-2. `keyword-research` — only once you know what the site is already about. Research
-   first and you will target words the site cannot plausibly rank for.
-3. `on-page-optimizer` on the pages where the audit and the keyword set overlap.
-   That intersection is where the fastest movement lives.
-4. `serp-rank-tracker` to set the baseline you will be judged against. Do this
-   before the fixes land, not after — a baseline recorded afterwards proves nothing.
-5. `competitor-seo` and `backlink-prospector` last. Both are slow, and both are
-   easier to aim once the site's own house is in order.
+A finding affecting forty pages is not automatically bigger than one affecting a
+single page. Say which page, and what it is for.
 
-Do not run all seven because you were asked a broad question. Three well-sequenced
-skills with a clear finding beat seven reports nobody reads.
+## When the audit and the research disagree
 
-## When findings disagree
+The research says target a term; the audit says the page that should own it is
+thin, slow or duplicated elsewhere. The audit wins. Fix the page first, then
+target the term — a term pointed at a page that cannot hold it produces work that
+looks done and changes nothing.
 
-Two rules settle most conflicts:
+If two pages both target the term, that is the finding: say which one should keep
+it and what the other should become instead.
 
-- **Observation beats inference.** What you fetched outranks what you concluded.
-- **The narrower claim wins.** "This page's title is 92 characters" survives; "the
-  site has a titles problem" does not, unless you counted.
+## What to say when asked for something this stack does not have
 
-If two findings genuinely conflict and you cannot resolve them, report both and say
-which you would act on first. Do not average them into a claim neither supports.
+Three skills: audit, research, optimise. Rank tracking, backlinks, competitor
+analysis, local listings, technical SEO beyond what a fetch reveals — none of
+these exist here yet.
+
+Say so plainly and name what you *can* do next. Do not substitute. An audit
+delivered in place of the competitor analysis they asked for is not a partial
+answer, it is a different one, and it takes them longer to notice than a refusal
+would have.

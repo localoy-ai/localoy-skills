@@ -6,7 +6,7 @@
     {
       "id": "playbook",
       "file": "playbook.md",
-      "title": "Prioritising findings, reading a ranking change, sequencing multi-skill work",
+      "title": "Prioritising findings, answering a ranking question, sequencing multi-skill work",
       "trigger": "the request is open-ended, spans more than one skill, or the findings disagree about what matters most"
     }
   ]
