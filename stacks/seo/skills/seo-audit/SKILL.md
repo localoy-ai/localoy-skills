@@ -5,6 +5,41 @@ version: 0.1.0
 publisher: localoy
 license: MIT
 capabilities: [files, web]
+output_contract: [no_invented_scores, summary_table]
+triggers:
+  - audit my site
+  - check my seo
+  - is anything broken on the site
+  - run an seo audit
+stages:
+  - id: crawl
+    goal: >
+      Build the page list and fetch every URL on it. Record the HTTP status,
+      any redirect chain, and every page that failed to load. Do not analyse
+      anything yet — a page you could not fetch is recorded as unfetched, never
+      dropped.
+    produces: work/pages.md
+  - id: onpage
+    goal: >
+      For every page fetched, extract the title, meta description, H1 and
+      heading structure, and record the observed value with its character
+      count. Flag missing or duplicate titles, titles over 60 characters,
+      missing metas, multiple H1s, and headings that skip levels.
+    produces: work/onpage.md
+  - id: links
+    goal: >
+      Map internal links from the fetched HTML. Identify orphan pages, broken
+      internal links, and important pages more than two clicks from the
+      homepage. Also record canonical tags, structured data, and image
+      attributes where present.
+    produces: work/links.md
+  - id: report
+    goal: >
+      Read the three working files and write the audit. Summary table first,
+      then per-page findings, then the fix list in three buckets — this week,
+      this month, backlog — with severity based only on what was observed.
+    produces: reports/audit.md
+    output_contract: [no_invented_scores, summary_table]
 tags: [seo, audit]
 ---
 
